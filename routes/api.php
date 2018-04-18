@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/hello_world', function () {
+    return json_encode(['message' => 'hello world...']);
+});
+
+
+Route::post('register','Auth\RegisterController@create');
